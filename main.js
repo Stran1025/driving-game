@@ -8,5 +8,21 @@ var car = {
 
 car.facing = 'east';
 
-var $bound = document.querySelector('.bound');
-$bound.addEventListener('keypress');
+// var $bound = document.querySelector('.bound');
+
+document.addEventListener('keydown', handleKeyPress);
+
+function handleKeyPress(event) {
+  if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+    return;
+  }
+  if (event.key === 'ArrowRight') {
+    makeTurn('right');
+  } else {
+    makeTurn('left');
+  }
+}
+
+function makeTurn(direction) {
+
+}

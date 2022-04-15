@@ -7,3 +7,6 @@ var car = {
 };
 
 car.facing = 'east';
+
+var $bound = document.querySelector('.bound');
+$bound.addEventListener('keypress');

@@ -1,0 +1,17 @@
+.bound {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(40, 141, 38);
+}
+
+.hitbox {
+  width: 10%;
+  position: absolute;
+}
+
+.car {
+  width: 100%;
+}

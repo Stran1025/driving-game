@@ -6,7 +6,9 @@ var car = {
   }
 };
 
-car.facing = 'east';
+var directions = ['north', 'east', 'south', 'west'];
+
+car.facing = directions[1];
 
 // var $bound = document.querySelector('.bound');
 

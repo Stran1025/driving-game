@@ -14,20 +14,5 @@ body {
 
 .car {
   width: 100%;
-}
-
-.north {
-  transform: rotate(-90deg);
-}
-
-.east {
-  transform: rotate(0);
-}
-
-.south {
-  transform: rotate(90deg);
-}
-
-.west {
-  transform: rotate(180);
+  transition: transform 3s;
 }

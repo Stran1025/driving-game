@@ -1,14 +1,12 @@
 var car = {
-  facing: '',
+  facing: 0,
   position: {
     x: 0,
     y: 0
   }
 };
 
-var directions = ['north', 'east', 'south', 'west'];
-
-car.facing = directions[1];
+var $car = document.querySelector('.car');
 
 // var $bound = document.querySelector('.bound');
 
@@ -19,12 +17,21 @@ function handleKeyPress(event) {
     return;
   }
   if (event.key === 'ArrowRight') {
-    makeTurn('right');
+    makeTurn(1);
   } else {
-    makeTurn('left');
+    makeTurn(-1);
   }
 }
 
-function makeTurn(direction) {
+function makeTurn(num) {
+  if (num !== 1 && num !== -1) {
+    return;
+  }
+  car.facing = car.facing + num;
+  displayFacing(car.facing);
+}
 
+function displayFacing(num) {
+  var degree = num * 90;
+  $car.style.transform = 'rotate(' + degree + 'deg)';
 }

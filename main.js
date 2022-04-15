@@ -13,21 +13,25 @@ var $car = document.querySelector('.car');
 document.addEventListener('keydown', handleKeyPress);
 
 function handleKeyPress(event) {
-  if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+  if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft' && event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
     return;
   }
   if (event.key === 'ArrowRight') {
-    makeTurn(1);
+    makeTurn(0);
+  } else if (event.key === 'ArrowLeft') {
+    makeTurn(2);
+  } else if (event.key === 'ArrowUp') {
+    makeTurn(3);
   } else {
-    makeTurn(-1);
+    makeTurn(1);
   }
 }
 
 function makeTurn(num) {
-  if (num !== 1 && num !== -1) {
+  if (num > 4) {
     return;
   }
-  car.facing = car.facing + num;
+  car.facing = num;
   displayFacing(car.facing);
 }
 
